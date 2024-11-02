@@ -3,10 +3,10 @@ import pkg from '@xterm/xterm';
 import { FitAddon } from '@xterm/addon-fit';
 import '@xterm/xterm/css/xterm.css';
 
-const { Terminal } = pkg;
+const { Terminal: XTerm } = pkg;
 
 interface TerminalProps {
-  options?: pkg.ITerminalOptions;
+  options?: Parameters<typeof XTerm>[0];
   onInit?: (terminal: pkg.Terminal) => void;
   className?: string;
 }
@@ -17,7 +17,7 @@ export function Terminal({ options, onInit, className = "h-96" }: TerminalProps)
   useEffect(() => {
     if (!terminalRef.current) return;
 
-    const terminal = new Terminal({
+    const terminal = new XTerm({
       cursorBlink: true,
       theme: {
         background: '#1e1e1e',

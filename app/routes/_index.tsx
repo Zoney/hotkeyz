@@ -11,29 +11,35 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <Layout>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Card
-          to="/vim"
-          title="Vim"
-          description="Master the art of modal text editing"
-        />
-        <Card
-          to="/vscode"
-          title="VSCode"
-          description="Boost your coding productivity"
-        />
-        <Card
-          to="/cursor"
-          title="Cursor"
-          description="AI-powered coding with keyboard efficiency"
-        />
-        <Card
-          to="/macos-mail"
-          title="macOS Mail"
-          description="Email management shortcuts"
-        />
-      </div>
-    </Layout>
+    <div className="min-h-screen bg-zinc-900 text-zinc-100">
+      <Layout>
+        <main className="p-6 space-y-8">
+          <div className="bg-zinc-800 rounded-lg p-6 shadow-lg">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card
+                to="/vim"
+                title="Vim"
+                description="Master the art of modal text editing"
+              />
+              <Card
+                to="/vscode"
+                title="VSCode"
+                description="Boost your coding productivity"
+              />
+              <Card
+                to="/cursor"
+                title="Cursor"
+                description="AI-powered coding with keyboard efficiency"
+              />
+              <Card
+                to="/macos-mail"
+                title="macOS Mail"
+                description="Email management shortcuts"
+              />
+            </div>
+          </div>
+        </main>
+      </Layout>
+    </div>
   );
 }
