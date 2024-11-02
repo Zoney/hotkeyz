@@ -40,8 +40,8 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations ######
           app_location: "/" # Root of your Remix project
-          api_location: "" # No separate API folder for Remix
-          output_location: "public/build" # Where Remix builds client assets
+          api_location: "api" # API folder for server-side code
+          output_location: "public" # Where static files are served from
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
 
